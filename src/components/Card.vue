@@ -27,6 +27,18 @@ export default {
     <div>
         Voto: {{ details.vote_average }}
     </div>
+    <div v-if="details.original_language === 'en'">
+        EN FLAG
+    </div>
+    <div v-if="details.original_language === 'es'">
+        ES FLAG
+    </div>
+    <div v-if="details.original_language === 'fr'">
+        FR FLAG
+    </div>
+    <div v-else>
+
+    </div>
 </template>
 
 <style scoped></style>

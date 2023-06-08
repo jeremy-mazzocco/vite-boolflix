@@ -41,6 +41,7 @@ export default {
 .container {
     margin: 0 auto;
     width: 90%;
+
 }
 
 .row {

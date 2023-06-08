@@ -2,9 +2,9 @@
 import { store } from "../store";
 
 export default {
-    name: "Card",
+    name: "CardMovies",
     props: {
-        details: Object,
+        detailsmovies: Object,
     },
     data() {
         return {
@@ -16,16 +16,16 @@ export default {
 
 <template>
     <div>
-        Titolo originale: {{ details.original_title }}
+        Titolo originale: {{ detailsmovies.original_title }}
     </div>
     <div>
-        Titolo: {{ details.title }}
+        Titolo: {{ detailsmovies.title }}
     </div>
 
-    <div v-if="details.original_language === 'it'">
+    <div v-if="detailsmovies.original_language === 'it'">
         <div class="flag italy"></div>
     </div>
-    <div v-if="details.original_language === 'cn'">
+    <div v-if="detailsmovies.original_language === 'cn'">
         <div class="flag china">
             <div class="china__star"></div>
             <div class="china__small_star"></div>
@@ -34,23 +34,23 @@ export default {
             <div class="china__small_star"></div>
         </div>
     </div>
-    <div v-if="details.original_language === 'es'">
+    <div v-if="detailsmovies.original_language === 'es'">
         <div class="flag spain">
             <img src="https://imgur.com/g1E7616.png" width="73" alt="" />
         </div>
     </div>
-    <div v-if="details.original_language === 'fr'">
+    <div v-if="detailsmovies.original_language === 'fr'">
         <div class="flag france"></div>
     </div>
-    <div v-if="details.original_language === 'ja'">
+    <div v-if="detailsmovies.original_language === 'ja'">
         <div class="flag japan"></div>
     </div>
-    <div v-if="details.original_language === 'ru'">
+    <div v-if="detailsmovies.original_language === 'ru'">
         <div class="flag russia"></div>
     </div>
 
     <div>
-        Voto: {{ details.vote_average }}
+        Voto: {{ detailsmovies.vote_average }}
     </div>
 </template>
 

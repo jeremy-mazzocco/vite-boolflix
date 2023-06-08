@@ -1,11 +1,13 @@
 <script>
 import { store } from "../store";
-import Card from './Card.vue';
+import CardMovies from './CardMovies.vue';
+import CardSeries from './CardSeries.vue';
 
 export default {
     name: "List",
     components: {
-        Card
+        CardMovies,
+        CardSeries
     },
     data() {
         return {
@@ -17,8 +19,16 @@ export default {
 
 
 <template>
+    <h3>
+        Movie
+    </h3>
     <div class="row">
-
-        <Card v-for=" (movie, idx) in store.dataMovies" :details="movie" />
+        <CardMovies v-for=" (movie, idx) in store.dataMovies" :detailsmovies="movie" />
+    </div>
+    <h3>
+        TV Series
+    </h3>
+    <div class="row">
+        <CardSeries v-for=" (serie, idx) in store.dataSeries" :detailsseries="serie" />
     </div>
 </template>

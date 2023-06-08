@@ -25,7 +25,7 @@ export default {
           store.dataMovies = reponseMovie.data.results;
 
           for (let i = 0; i < store.dataMovies.length; i++) {
-            store.dataMovies[i].voteMovies = Math.floor(((store.dataMovies[i].vote_average) / 2));
+            store.dataMovies[i].voteMovies = Math.ceil(((store.dataMovies[i].vote_average) / 2));
           }
         })
         .catch(err => {
@@ -37,7 +37,7 @@ export default {
           store.dataSeries = reponseSerie.data.results;
 
           for (let j = 0; j < store.dataSeries.length; j++) {
-            store.dataSeries[j].voteSeries = Math.floor((store.dataSeries[j].vote_average) / 2);
+            store.dataSeries[j].voteSeries = Math.ceil((store.dataSeries[j].vote_average) / 2);
             console.log(store.dataSeries[j].voteSeries);
           }
         })
@@ -65,4 +65,14 @@ export default {
   </main>
 </template>
 
-<style scoped></style>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+</style>

@@ -19,16 +19,34 @@ export default {
 
 
 <template>
-    <h3>
-        Movie
-    </h3>
-    <div class="row">
-        <CardMovies v-for=" (movie, idx) in store.dataMovies" :detailsmovies="movie" />
+    <div class="container">
+        <h3>
+            Movie
+        </h3>
+        <div class="row">
+            <CardMovies v-for=" (movie, idx) in store.dataMovies" :detailsmovies="movie" />
+        </div>
     </div>
-    <h3>
-        TV Series
-    </h3>
-    <div class="row">
-        <CardSeries v-for=" (serie, idx) in store.dataSeries" :detailsseries="serie" />
+    <div class="container">
+        <h3>
+            TV Series
+        </h3>
+        <div class="row">
+            <CardSeries v-for=" (serie, idx) in store.dataSeries" :detailsseries="serie" />
+        </div>
     </div>
 </template>
+
+<style scoped>
+.container {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px 0px;
+}
+</style>

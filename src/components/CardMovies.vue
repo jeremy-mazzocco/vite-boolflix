@@ -1,6 +1,7 @@
 <script >
 import { store } from "../store";
 
+
 export default {
     name: "CardMovies",
     props: {
@@ -15,6 +16,9 @@ export default {
 </script>
 
 <template>
+    <div>
+        <img :src="`https://image.tmdb.org/t/p/w300${detailsmovies.poster_path}`" alt="">
+    </div>
     <div>
         Titolo originale: {{ detailsmovies.original_title }}
     </div>
@@ -49,8 +53,27 @@ export default {
         <div class="flag russia"></div>
     </div>
 
-    <div>
-        Voto: {{ detailsmovies.vote_average }}
+    <div v-if="detailsmovies.voteMovies === 0">
+        Zero stelle
+    </div>
+    <div v-if="detailsmovies.voteMovies === 1">
+        <font-awesome-icon icon="fa-solid fa-star" />
+    </div>
+    <div v-if="detailsmovies.voteMovies === 2">
+        <font-awesome-icon icon="fa-solid fa-star" /> <font-awesome-icon icon="fa-solid fa-star" />
+    </div>
+    <div v-if="detailsmovies.voteMovies === 3">
+        <font-awesome-icon icon="fa-solid fa-star" /> <font-awesome-icon icon="fa-solid fa-star" /> <font-awesome-icon
+            icon="fa-solid fa-star" />
+    </div>
+    <div v-if="detailsmovies.voteMovies === 4">
+        <font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon
+            icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" />
+    </div>
+    <div v-if="detailsmovies.voteMovies === 5">
+        <font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon
+            icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon
+            icon="fa-solid fa-star" />
     </div>
 </template>
 
@@ -147,5 +170,4 @@ export default {
 
 .russia {
     background: linear-gradient(#fff 33%, #0136a8 33%, #0136a8 66%, #d72718 0);
-}
-</style>
+}</style>

@@ -21,18 +21,25 @@ export default {
       let mySeriesURL = `https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&query=${store.contentInput}`;
 
       axios.get(myMovieURL)
-        .then(reponse => {
-          store.dataMovies = reponse.data.results;
-          console.log(store.dataMovies);
+        .then(reponseMovie => {
+          store.dataMovies = reponseMovie.data.results;
+
+          for (let i = 0; i < store.dataMovies.length; i++) {
+            store.dataMovies[i].voteMovies = Math.floor(((store.dataMovies[i].vote_average) / 2));
+          }
         })
         .catch(err => {
           console.log(err);
         });
 
       axios.get(mySeriesURL)
-        .then(reponse => {
-          store.dataSeries = reponse.data.results;
-          console.log(store.dataSeries);
+        .then(reponseSerie => {
+          store.dataSeries = reponseSerie.data.results;
+
+          for (let j = 0; j < store.dataSeries.length; j++) {
+            store.dataSeries[j].voteSeries = Math.floor((store.dataSeries[j].vote_average) / 2);
+            console.log(store.dataSeries[j].voteSeries);
+          }
         })
         .catch(err => {
           console.log(err);

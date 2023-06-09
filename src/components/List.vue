@@ -20,7 +20,7 @@ export default {
 
 <template>
     <div class="container">
-        <h3>
+        <h3 v-if="store.dataMovies.length !== 0">
             Movie
         </h3>
         <div class="row">
@@ -28,7 +28,7 @@ export default {
         </div>
     </div>
     <div class="container">
-        <h3>
+        <h3 v-if="store.dataSeries.length !== 0">
             TV Series
         </h3>
         <div class="row">
@@ -41,7 +41,6 @@ export default {
 .container {
     margin: 0 auto;
     width: 90%;
-
 }
 
 .row {

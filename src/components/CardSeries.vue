@@ -16,85 +16,133 @@ export default {
 </script>
 
 <template>
-    <div class="card">
-        <div class="img">
-            <img :src="`https://image.tmdb.org/t/p/w342${detailsseries.poster_path}`" alt="">
-        </div>
-        <div class="text">
-            <div>
-                Titolo originale: {{ detailsseries.original_name }}
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img :src="`https://image.tmdb.org/t/p/w342${detailsseries.poster_path}`" alt="no poster">
             </div>
-            <div>
-                Titolo: {{ detailsseries.name }}
-            </div>
-            <!-- flags -->
-            <div v-if="detailsseries.original_language === 'it'">
-                <div class="flag italy"></div>
-            </div>
-            <div v-if="detailsseries.original_language === 'cn'">
-                <div class="flag china">
-                    <div class="china__star"></div>
-                    <div class="china__small_star"></div>
-                    <div class="china__small_star"></div>
-                    <div class="china__small_star"></div>
-                    <div class="china__small_star"></div>
+            <div class="flip-card-back">
+                <div>
+                    {{ detailsseries.original_name }}
                 </div>
-            </div>
-            <div v-if="detailsseries.original_language === 'es'">
-                <div class="flag spain">
-                    <img src="https://imgur.com/g1E7616.png" width="73" alt="" />
+                <div>
+                    {{ detailsseries.name }}
                 </div>
-            </div>
-            <div v-if="detailsseries.original_language === 'fr'">
-                <div class="flag france"></div>
-            </div>
-            <div v-if="detailsseries.original_language === 'ja'">
-                <div class="flag japan"></div>
-            </div>
-            <div v-if="detailsseries.original_language === 'ru'">
-                <div class="flag russia"></div>
-            </div>
-            <div v-if="detailsseries.original_language === 'en'">
-                EN
-            </div>
-            <!-- stars -->
-            <div v-if="detailsseries.voteSeries === 0">
-                Zero stelle
-            </div>
-            <div v-if="detailsseries.voteSeries === 1">
-                <font-awesome-icon icon="fa-solid fa-star" />
-            </div>
-            <div v-if="detailsseries.voteSeries === 2">
-                <font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" />
-            </div>
-            <div v-if="detailsseries.voteSeries === 3">
-                <font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon
-                    icon="fa-solid fa-star" />
-            </div>
-            <div v-if="detailsseries.voteSeries === 4">
-                <font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon
-                    icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" />
-            </div>
-            <div v-if="detailsseries.voteSeries === 5">
-                <font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon
-                    icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon
-                    icon="fa-solid fa-star" />
+                <!-- flags -->
+                <div class="flag-container">
+                    <div v-if="detailsseries.original_language === 'it'">
+                        <div class="flag italy"></div>
+                    </div>
+                    <div v-if="detailsseries.original_language === 'cn'">
+                        <div class="flag china">
+                            <div class="china__star"></div>
+                            <div class="china__small_star"></div>
+                            <div class="china__small_star"></div>
+                            <div class="china__small_star"></div>
+                            <div class="china__small_star"></div>
+                        </div>
+                    </div>
+                    <div v-if="detailsseries.original_language === 'es'">
+                        <div class="flag spain">
+                            <img src="https://imgur.com/g1E7616.png" width="73" alt="" />
+                        </div>
+                    </div>
+                    <div v-if="detailsseries.original_language === 'fr'">
+                        <div class="flag france"></div>
+                    </div>
+                    <div v-if="detailsseries.original_language === 'ja'">
+                        <div class="flag japan"></div>
+                    </div>
+                    <div v-if="detailsseries.original_language === 'ru'">
+                        <div class="flag russia"></div>
+                    </div>
+                    <div v-if="detailsseries.original_language === 'en'">
+                        EN
+                    </div>
+                </div>
+                <!-- stars -->
+                <div class="star">
+                    <div v-if="detailsseries.voteMovies === 0">
+
+                    </div>
+                    <div v-if="detailsseries.voteMovies === 1">
+                        <font-awesome-icon icon="fa-solid fa-star" />
+                    </div>
+                    <div v-if="detailsseries.voteMovies === 2">
+                        <font-awesome-icon icon="fa-solid fa-star" /> <font-awesome-icon icon="fa-solid fa-star" />
+                    </div>
+                    <div v-if="detailsseries.voteMovies === 3">
+                        <font-awesome-icon icon="fa-solid fa-star" /> <font-awesome-icon icon="fa-solid fa-star" />
+                        <font-awesome-icon icon="fa-solid fa-star" />
+                    </div>
+                    <div v-if="detailsseries.voteMovies === 4">
+                        <font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon
+                            icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon
+                            icon="fa-solid fa-star" />
+                    </div>
+                    <div v-if="detailsseries.voteMovies === 5">
+                        <font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon
+                            icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon
+                            icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <style scoped>
-.card {
-    width: calc(100% / 4);
+h2,
+.title,
+.flag-container {
+    margin-bottom: 12px;
 }
 
-.text {
-    display: none;
+.flip-card {
+    background-color: transparent;
+    width: calc(100% / 4);
+    height: 513px;
+    perspective: 1000px;
+    /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the back side */
+.flip-card-back {
+    background-color: rgb(14, 14, 15);
+    color: white;
+    transform: rotateY(180deg);
+    padding: 15px;
 }
 
 .flag {
     position: relative;
+    left: 45%;
     width: 30px;
     height: 20px;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);

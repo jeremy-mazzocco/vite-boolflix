@@ -48,8 +48,6 @@ export default {
 
   }
 }
-
-
 </script>
 
 <template>
@@ -70,15 +68,18 @@ export default {
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: rgb(67, 67, 67);
+  height: calc(100vh - 50px);
 }
 
 header {
   background-color: black;
   height: 50px;
+  margin-bottom: 10px;
 }
 
-main {
-  background-color: rgb(67, 67, 67);
-  height: calc(100vh - 50px);
+img {
+  max-width: 100%;
+  height: 100%;
 }
 </style>

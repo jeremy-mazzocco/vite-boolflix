@@ -26,21 +26,15 @@ export default {
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 #flex-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-color: black;
 }
 
 h1 {
     color: red;
     font-weight: lighter;
-}
-
-.container {
-    margin: 0 auto;
-    width: 90%;
 }
 </style>

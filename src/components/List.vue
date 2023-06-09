@@ -37,12 +37,7 @@ export default {
     </div>
 </template>
 
-<style scoped>
-.container {
-    margin: 0 auto;
-    width: 90%;
-}
-
+<style lang="scss" scoped>
 .row {
     display: flex;
     justify-content: space-between;

@@ -26,6 +26,7 @@ export default {
           for (let i = 0; i < store.dataMovies.length; i++) {
             store.dataMovies[i].voteMovies = Math.ceil(((store.dataMovies[i].vote_average) / 2));
           }
+          console.log(store.dataMovies);
         })
         .catch(err => {
           console.log(err);
@@ -37,6 +38,7 @@ export default {
           for (let j = 0; j < store.dataSeries.length; j++) {
             store.dataSeries[j].voteSeries = Math.ceil((store.dataSeries[j].vote_average) / 2);
           }
+          console.log(store.dataSeries);
         })
         .catch(err => {
           console.log(err);
@@ -59,27 +61,6 @@ export default {
   </main>
 </template>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: rgb(67, 67, 67);
-  height: calc(100vh - 50px);
-}
-
-header {
-  background-color: black;
-  height: 50px;
-  margin-bottom: 10px;
-}
-
-img {
-  max-width: 100%;
-  height: 100%;
-}
+<style lang="scss">
+@use './components/styles/general.scss' as*;
 </style>

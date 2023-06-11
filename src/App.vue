@@ -17,12 +17,16 @@ export default {
   methods: {
     getApiData() {
 
-      let myMovieURL = `https://api.themoviedb.org/3/search/movie?api_key=e99307154c6dfb0b4750f6603256716d&query=${store.contentInput}`;
-      let mySeriesURL = `https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&query=${store.contentInput}`;
+      let myMovieURL = `${store.movieURL}${store.contentInput}`;
+      let mySeriesURL = `${store.seriesURL}${store.contentInput}`;
+
+      // runAxios(myMovieURL, store.dataMovies, 'voteMovies');
+      // runAxios(mySeriesURL, store.dataSeries, 'voteSeries');
+
 
       axios.get(myMovieURL)
-        .then(reponseMovie => {
-          store.dataMovies = reponseMovie.data.results;
+        .then(responseMovie => {
+          store.dataMovies = responseMovie.data.results;
           for (let i = 0; i < store.dataMovies.length; i++) {
             store.dataMovies[i].voteMovies = Math.ceil(((store.dataMovies[i].vote_average) / 2));
           }
@@ -33,8 +37,8 @@ export default {
         });
 
       axios.get(mySeriesURL)
-        .then(reponseSerie => {
-          store.dataSeries = reponseSerie.data.results;
+        .then(responseSerie => {
+          store.dataSeries = responseSerie.data.results;
           for (let j = 0; j < store.dataSeries.length; j++) {
             store.dataSeries[j].voteSeries = Math.ceil((store.dataSeries[j].vote_average) / 2);
           }
@@ -47,9 +51,24 @@ export default {
   },
   created() {
     this.getApiData();
-
   }
 }
+
+// function runAxios(url, arr, voteName) {
+//   axios.get(url)
+//     .then(response => {
+//       arr = response.data.results;
+//       for (let i = 0; i < arr.length; i++) {
+//         arr[i][voteName] = Math.ceil((arr[i].vote_average) / 2);
+//       }
+//       console.log(arr);
+//     })
+//     .catch(err => {
+//       console.log(err);
+//     });
+// }
+
+
 </script>
 
 <template>

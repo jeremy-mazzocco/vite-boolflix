@@ -35,51 +35,27 @@ export default {
 
 <template>
     <div class="flip-card">
-    <div class="flip-card-inner">
-        <div class="flip-card-front">
-            <img :src="`https://image.tmdb.org/t/p/w342${detailsseries.poster_path}`" :alt="store.noPoster">
-        </div>
-        <div class="flip-card-back">
-            <!-- titles -->
-            <div>
-                {{ detailsseries.original_name }}
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img :src="`https://image.tmdb.org/t/p/w342${detailsseries.poster_path}`" :alt="store.noPoster">
             </div>
-            <div>
-                    {{ detailsseries.name }}
+            <div class="flip-card-back">
+                <!-- titles -->
+                <div>
+                    <div>
+                        {{ detailsseries.original_name }}
+                    </div>
+                    <div v-if="detailsmovies.original_title !== detailsmovies.title">
+                        {{ detailsseries.name }}
+                    </div>
                 </div>
                 <!-- flags -->
                 <div class="flag-container">
                     <img :src="detailsseries.flag">
                 </div>
                 <div class="stars">
-                    {{ de }}
-                    <font-awesome-icon icon="fa-solid fa-star" />
+                    {{ detailsseries.stars }}
                 </div>
-                <!-- <div class="star">
-                            <div v-if="detailsseries.voteSeries === 0">
-
-                            </div>
-                            <div v-if="detailsseries.voteSeries === 1">
-                                <font-awesome-icon icon="fa-solid fa-star" />
-                            </div>
-                            <div v-if="detailsseries.voteSeries === 2">
-                                <font-awesome-icon icon="fa-solid fa-star" /> <font-awesome-icon icon="fa-solid fa-star" />
-                            </div>
-                            <div v-if="detailsseries.voteSeries === 3">
-                                <font-awesome-icon icon="fa-solid fa-star" /> <font-awesome-icon icon="fa-solid fa-star" />
-                                <font-awesome-icon icon="fa-solid fa-star" />
-                            </div>
-                            <div v-if="detailsseries.voteSeries === 4">
-                                <font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon
-                                    icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon
-                                    icon="fa-solid fa-star" />
-                            </div>
-                            <div v-if="detailsseries.voteSeries === 5">
-                                <font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon
-                                    icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" /><font-awesome-icon
-                                    icon="fa-solid fa-star" /><font-awesome-icon icon="fa-solid fa-star" />
-                            </div>
-                        </div> -->
             </div>
         </div>
     </div>

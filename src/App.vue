@@ -47,6 +47,8 @@ export default {
               }
             });
           });
+          console.log(this.store.dataMovies);
+
         })
         .catch(err => {
           console.log(err);
@@ -77,6 +79,7 @@ export default {
               }
             });
           });
+          console.log(this.store.dataSeries);
         })
         .catch(err => {
           console.log(err);
@@ -87,8 +90,6 @@ export default {
     this.getApiData();
   }
 }
-
-
 </script>
 
 <template>

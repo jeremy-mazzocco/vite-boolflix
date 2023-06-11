@@ -43,6 +43,10 @@ export const store = reactive({
     ],
     stars: [
         {
+            id: 0,
+            content: "\u2606 \u2606 \u2606 \u2606 \u2606"
+        },
+        {
             id: 1,
             content: "\u2605 \u2606 \u2606 \u2606 \u2606"
         },

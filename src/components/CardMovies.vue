@@ -23,11 +23,13 @@ export default {
             </div>
             <div class="flip-card-back">
                 <!-- titles -->
-                <h2>
-                    {{ detailsmovies.original_title }}
-                </h2>
-                <div class="title">
-                    {{ detailsmovies.title }}
+                <div>
+                    <h2>
+                        {{ detailsmovies.original_title }}
+                    </h2>
+                    <div class="title" v-if="detailsmovies.original_title !== detailsmovies.title">
+                        {{ detailsmovies.title }}
+                    </div>
                 </div>
                 <!-- flags -->
                 <div class="flag-container">

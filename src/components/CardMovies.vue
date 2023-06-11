@@ -1,7 +1,6 @@
 <script >
 import { store } from "../store";
 
-
 export default {
     name: "CardMovies",
     props: {
@@ -11,15 +10,16 @@ export default {
         return {
             store,
         }
-    }
+    },
 }
+
 </script>
 
 <template>
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img :src="`https://image.tmdb.org/t/p/w342${detailsmovies.poster_path}`" alt="no poster">
+                <img :src="`https://image.tmdb.org/t/p/w342${detailsmovies.poster_path}`" alt="#">
             </div>
             <div class="flip-card-back">
                 <h2>
@@ -55,9 +55,6 @@ export default {
                     </div>
                     <div v-if="detailsmovies.original_language === 'ru'">
                         <div class="flag russia"></div>
-                    </div>
-                    <div v-if="detailsmovies.original_language === 'en'">
-                        EN
                     </div>
                 </div>
                 <!-- stars -->

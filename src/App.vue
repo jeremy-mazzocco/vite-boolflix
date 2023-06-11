@@ -16,57 +16,77 @@ export default {
   },
   methods: {
     getApiData() {
+      // runAxios(myMovieURL, store.dataMovies, 'voteMovies');
+      // runAxios(mySeriesURL, store.dataSeries, 'voteSeries');
 
       let myMovieURL = `${store.movieURL}${store.contentInput}`;
       let mySeriesURL = `${store.seriesURL}${store.contentInput}`;
 
-      // runAxios(myMovieURL, store.dataMovies, 'voteMovies');
-      // runAxios(mySeriesURL, store.dataSeries, 'voteSeries');
-
-
+      // Movies
       axios.get(myMovieURL)
         .then(responseMovie => {
+
+          // put API in store.js
           store.dataMovies = responseMovie.data.results;
-          for (let i = 0; i < store.dataMovies.length; i++) {
-            store.dataMovies[i].voteMovies = Math.ceil(((store.dataMovies[i].vote_average) / 2));
-          }
-          console.log(store.dataMovies);
+          store.dataMovies.forEach(movie => {
+
+            // clean vote and put in store.js
+            movie.voteMovies = Math.ceil(((movie.vote_average) / 2));
+
+            // asign flags
+            store.flags.forEach(flag => {
+              if (flag.nation === movie.original_language) {
+                movie.flag = flag.img;
+              }
+            });
+
+            // asign stars 
+            store.stars.forEach(star => {
+              if (star.id === movie.voteMovies) {
+                movie.stars = star.content;
+              }
+            });
+          });
         })
         .catch(err => {
           console.log(err);
         });
 
+      // TV Series
       axios.get(mySeriesURL)
-        .then(responseSerie => {
-          store.dataSeries = responseSerie.data.results;
-          for (let j = 0; j < store.dataSeries.length; j++) {
-            store.dataSeries[j].voteSeries = Math.ceil((store.dataSeries[j].vote_average) / 2);
-          }
-          console.log(store.dataSeries);
+        .then(response => {
+
+          // put API in store.js
+          store.dataSeries = response.data.results;
+          store.dataSeries.forEach(serie => {
+
+            // clean vote and put in store.js
+            serie.voteSerie = Math.ceil(((serie.vote_average) / 2));
+
+            // asign flags
+            store.flags.forEach(flag => {
+              if (flag.nation === serie.original_language) {
+                serie.flag = flag.img;
+              }
+            });
+
+            // asign stars 
+            store.stars.forEach(star => {
+              if (star.id === serie.voteSerie) {
+                serie.stars = star.content;
+              }
+            });
+          });
         })
         .catch(err => {
           console.log(err);
-        })
-    },
+        });
+    }
   },
   created() {
     this.getApiData();
   }
 }
-
-// function runAxios(url, arr, voteName) {
-//   axios.get(url)
-//     .then(response => {
-//       arr = response.data.results;
-//       for (let i = 0; i < arr.length; i++) {
-//         arr[i][voteName] = Math.ceil((arr[i].vote_average) / 2);
-//       }
-//       console.log(arr);
-//     })
-//     .catch(err => {
-//       console.log(err);
-//     });
-// }
 
 
 </script>

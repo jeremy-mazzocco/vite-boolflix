@@ -1,4 +1,5 @@
 <script>
+import { faBuildingFlag } from '@fortawesome/free-solid-svg-icons';
 import { store } from '../store';
 
 export default {
@@ -15,63 +16,44 @@ export default {
         starRating() {
             let stars = '';
             for (let i = 0; i < this.detailsseries.voteSeries; i++) {
-                stars += '<font-awesome-icon icon="fa-solid fa-star" /> ';
+                stars += `<font-awesome-icon icon="fa-solid fa-star" />`;
             }
             return stars;
+        },
+        findFlag() {
+            let lang = '';
+            for (let j = 0; j < store.flags.length; j++) {
+                if (store.flags[j].nation === this.detailsseries.original_language) {
+                    lang = store.flags[j].html;
+                }
+            }
+            return lang;
         }
     }
 }
-
 </script>
 
 <template>
     <div class="flip-card">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <img :src="`https://image.tmdb.org/t/p/w342${detailsseries.poster_path}`" alt="#">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <img :src="`https://image.tmdb.org/t/p/w342${detailsseries.poster_path}`" :alt="store.noPoster">
+        </div>
+        <div class="flip-card-back">
+            <!-- titles -->
+            <div>
+                {{ detailsseries.original_name }}
             </div>
-            <div class="flip-card-back">
-                <div>
-                    {{ detailsseries.original_name }}
-                </div>
-                <div>
+            <div>
                     {{ detailsseries.name }}
                 </div>
                 <!-- flags -->
                 <div class="flag-container">
-                    <div v-if="detailsseries.original_language === 'it'">
-                        <div class="flag italy"></div>
-                    </div>
-                    <div v-if="detailsseries.original_language === 'cn'">
-                        <div class="flag china">
-                            <div class="china__star"></div>
-                            <div class="china__small_star"></div>
-                            <div class="china__small_star"></div>
-                            <div class="china__small_star"></div>
-                        <div class="china__small_star"></div>
-                    </div>
+                    <img :src="detailsseries.flag">
                 </div>
-                <div v-if="detailsseries.original_language === 'es'">
-                    <div class="flag spain">
-                        <img src="https://imgur.com/g1E7616.png" width="73" alt="" />
-                    </div>
-                </div>
-                <div v-if="detailsseries.original_language === 'fr'">
-                    <div class="flag france"></div>
-                </div>
-                <div v-if="detailsseries.original_language === 'ja'">
-                    <div class="flag japan"></div>
-                </div>
-                <div v-if="detailsseries.original_language === 'ru'">
-                    <div class="flag russia"></div>
-                </div>
-                <div v-if="detailsseries.original_language === 'en'">
-                    EN
-                </div>
-            </div>
-            <!-- stars -->
-            <div class="stars">
-                {{ starRating() }}
+                <div class="stars">
+                    {{ de }}
+                    <font-awesome-icon icon="fa-solid fa-star" />
                 </div>
                 <!-- <div class="star">
                             <div v-if="detailsseries.voteSeries === 0">
@@ -104,12 +86,17 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use './styles/flags.scss' as*;
 @use './styles/flip-card.scss' as*;
 
 h2,
 .title,
 .flag-container {
     margin-bottom: 12px;
+    margin-top: 12px;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
 }
 </style>

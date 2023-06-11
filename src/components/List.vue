@@ -23,7 +23,7 @@ export default {
             Movie
         </h3>
         <div class="row">
-            <CardMovies v-for=" (movie, idx) in store.dataMovies" :detailsmovies="movie" />
+            <CardMovies v-for=" (movie, idx) in store.dataMovies" :detailsmovies="movie" :key="idx" />
         </div>
     </div>
     <div class="container">

@@ -39,6 +39,9 @@ export default {
                 <div class="star">
                     {{ detailsmovies.stars }}
                 </div>
+                <div class="description">
+                    {{ detailsmovies.overview }}
+                </div>
             </div>
         </div>
     </div>
@@ -56,5 +59,10 @@ h2,
         width: 20px;
         height: 20px;
     }
+}
+
+.description {
+    width: 70%;
+    margin: 50px auto;
 }
 </style>

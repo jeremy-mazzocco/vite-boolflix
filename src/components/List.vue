@@ -60,9 +60,7 @@ export default {
         font-size: 3rem;
         margin-top: 2rem;
         margin-bottom: 2rem;
-
     }
-
     .row {
         display: flex;
         justify-content: space-between;
@@ -86,7 +84,6 @@ export default {
         text-align: center;
         font-size: 3rem;
     }
-
     .search-bar {
         display: flex;
         justify-content: center;
@@ -97,8 +94,6 @@ export default {
             margin-right: 1rem;
             padding: 0.5rem 1rem;
         }
-
-
     }
 }
 </style>

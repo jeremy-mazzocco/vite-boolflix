@@ -33,7 +33,7 @@ export default {
                 </div>
                 <!-- flags -->
                 <div class="flag-container">
-                    <img :src="detailsmovies.flag">
+                    <img :src="detailsmovies.flag" alt="none">
                 </div>
                 <!-- stars -->
                 <div class="star">

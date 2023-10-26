@@ -3,9 +3,6 @@ import { store } from "../store";
 
 export default {
     name: "AppHeader",
-    components: {
-
-    },
     data() {
         return {
             store,

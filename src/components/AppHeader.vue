@@ -15,26 +15,15 @@ export default {
 </script>
 
 <template>
-    <div class="container" id="flex-header">
-        <h1>
-            BoolFlix
-        </h1>
-        <div>
-            <input type="text" v-model="store.contentInput">
-            <button @click.prevent="$emit('newsearch')">Search</button>
-        </div>
-    </div>
+    <h3 v-if="store.dataMovies.length !== 0">
+        Back to search
+    </h3>
 </template>
 
 <style lang="scss" scoped>
-#flex-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+h3 {
+    color: white;
 }
 
-h1 {
-    color: red;
-    font-weight: lighter;
-}
 </style>

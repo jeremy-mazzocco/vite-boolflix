@@ -1,5 +1,5 @@
 <script>
-import { store } from "../store";
+import { store } from '../store';
 import CardMovies from './CardMovies.vue';
 import CardSeries from './CardSeries.vue';
 
@@ -22,6 +22,20 @@ export default {
         <h3 v-if="store.dataMovies.length !== 0">
             Movie
         </h3>
+        <div v-else class="container-logo">
+            <div>
+                <div class="logo">
+                    <img src="../../src/assets/Netflix-logo.png" alt="logo">
+                </div>
+                <h2>Search your favorite movie or TV series</h2>
+                <div class="search-bar">
+                    <div>
+                        <input type="text" v-model="store.contentInput">
+                        <button @click.prevent="$emit('newsearch')">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <CardMovies v-for=" (movie, idx) in store.dataMovies" :detailsmovies="movie" :key="idx" />
         </div>
@@ -42,5 +56,43 @@ export default {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px 0px;
+}
+
+.container-logo {
+    width: 50%;
+    margin: auto;
+
+    .logo {
+        width: 450px;
+        height: 300px;
+        margin: auto;
+    }
+
+    h2 {
+        color: white;
+        text-align: center;
+        font-size: 3rem;
+    }
+
+    .search-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+
+        input {
+            margin-right: 1rem;
+            padding: 0.5rem 1rem;
+        }
+
+        button {
+            background-color: #e50914;
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
 }
 </style>

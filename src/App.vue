@@ -94,10 +94,10 @@ export default {
 
 <template>
   <header>
-    <AppHeader @newsearch="getApiData" />
+    <AppHeader />
   </header>
   <main>
-    <List />
+    <List @newsearch="getApiData" />
   </main>
 </template>
 

@@ -19,18 +19,18 @@ export default {
 
 <template>
     <div class="container">
-        <h3 v-if="store.dataMovies.length !== 0">
+        <h2 v-if="store.dataMovies.length !== 0">
             Movie
-        </h3>
+        </h2>
         <div v-else class="container-logo">
             <div>
                 <div class="logo">
                     <img src="../../src/assets/Netflix-logo.png" alt="logo">
                 </div>
-                <h2>Search your favorite movie or TV series</h2>
+                <h2>Search your favorite Movie and TV series</h2>
                 <div class="search-bar">
                     <div>
-                        <input type="text" v-model="store.contentInput">
+                        <input v-on:keyup.enter="$emit('newsearch')" type="text" v-model="store.contentInput">
                         <button @click.prevent="$emit('newsearch')">Search</button>
                     </div>
                 </div>
@@ -41,9 +41,9 @@ export default {
         </div>
     </div>
     <div class="container">
-        <h3 v-if="store.dataSeries.length !== 0">
+        <h2 v-if="store.dataSeries.length !== 0">
             TV Series
-        </h3>
+        </h2>
         <div class="row">
             <CardSeries v-for=" (serie, idx) in store.dataSeries" :detailsseries="serie" />
         </div>
@@ -51,11 +51,24 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.row {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px 0px;
+.container {
+    margin-bottom: 9rem;
+
+    h2 {
+        color: white;
+        text-align: center;
+        font-size: 3rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px 0px;
+    }
 }
 
 .container-logo {

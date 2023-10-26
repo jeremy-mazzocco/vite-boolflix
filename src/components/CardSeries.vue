@@ -45,7 +45,7 @@ export default {
                     <div>
                         {{ detailsseries.original_name }}
                     </div>
-                    <div v-if="detailsmovies.original_title !== detailsmovies.title">
+                    <div v-if="detailsseries.original_title !== detailsseries.title">
                         {{ detailsseries.name }}
                     </div>
                 </div>

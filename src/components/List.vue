@@ -13,7 +13,8 @@ export default {
         return {
             store,
         }
-    }
+    },
+    emits: ['newSearch'],
 }
 </script>
 
@@ -30,8 +31,8 @@ export default {
                 <h2>Search your favorite Movie and TV series</h2>
                 <div class="search-bar">
                     <div>
-                        <input v-on:keyup.enter="$emit('newsearch')" type="text" v-model="store.contentInput">
-                        <button @click.prevent="$emit('newsearch')">Search</button>
+                        <input v-on:keyup.enter="$emit('newSearch')" type="text" v-model="store.contentInput">
+                        <button @click.prevent="$emit('newSearch')">Search</button>
                     </div>
                 </div>
             </div>

@@ -98,7 +98,7 @@ export default {
     <AppHeader @backToSearch="backToSearch" />
   </header>
   <main>
-    <List @newsearch="getApiData" />
+    <List @newSearch="getApiData" />
   </main>
 </template>
 

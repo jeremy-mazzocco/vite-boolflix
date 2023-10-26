@@ -10,7 +10,8 @@ export default {
         return {
             store,
         }
-    }
+    },
+    emits: ['backToSearch'],
 }
 </script>
 

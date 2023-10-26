@@ -15,15 +15,22 @@ export default {
 </script>
 
 <template>
-    <h3 v-if="store.dataMovies.length !== 0">
-        Back to search
-    </h3>
+    <div class="button">
+        <button v-if="store.dataMovies.length !== 0" @click.prevent="$emit('backToSearch')">
+            Back to Search
+        </button>
+    </div>
 </template>
 
 <style lang="scss" scoped>
+.button {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
 
-h3 {
-    color: white;
+    button {
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+    }
 }
-
 </style>

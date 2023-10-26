@@ -45,14 +45,13 @@ export default {
             TV Series
         </h2>
         <div class="row">
-            <CardSeries v-for=" (serie, idx) in store.dataSeries" :detailsseries="serie" />
+            <CardSeries v-for=" (serie, idx) in store.dataSeries" :detailsseries="serie" :key="idx" />
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
 .container {
-    margin-bottom: 9rem;
 
     h2 {
         color: white;
@@ -98,14 +97,7 @@ export default {
             padding: 0.5rem 1rem;
         }
 
-        button {
-            background-color: #e50914;
-            border: none;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+
     }
 }
 </style>

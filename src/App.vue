@@ -16,8 +16,6 @@ export default {
   },
   methods: {
     getApiData() {
-      // runAxios(myMovieURL, store.dataMovies, 'voteMovies');
-      // runAxios(mySeriesURL, store.dataSeries, 'voteSeries');
 
       let myMovieURL = `${store.movieURL}${store.contentInput}`;
       let mySeriesURL = `${store.seriesURL}${store.contentInput}`;
@@ -26,7 +24,6 @@ export default {
       axios.get(myMovieURL)
         .then(responseMovie => {
 
-          // put API in store.js
           store.dataMovies = responseMovie.data.results;
           store.dataMovies.forEach(movie => {
 
@@ -47,7 +44,6 @@ export default {
               }
             });
           });
-          console.log(this.store.dataMovies);
 
         })
         .catch(err => {
@@ -79,11 +75,16 @@ export default {
               }
             });
           });
-          console.log(this.store.dataSeries);
         })
         .catch(err => {
           console.log(err);
         });
+    },
+
+    backToSearch() {
+      this.store.dataMovies = [];
+      this.store.dataSeries = [];
+      this.store.contentInput = '';
     }
   },
   created() {
@@ -94,7 +95,7 @@ export default {
 
 <template>
   <header>
-    <AppHeader />
+    <AppHeader @backToSearch="backToSearch" />
   </header>
   <main>
     <List @newsearch="getApiData" />

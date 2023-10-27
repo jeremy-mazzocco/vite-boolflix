@@ -73,7 +73,7 @@ export default {
 
 .container-logo {
     width: 50%;
-    margin: 0 auto;
+    margin: 50% auto;
 
     .logo {
         margin-top: -7rem;
@@ -102,29 +102,23 @@ export default {
 // Responsive tablet
 @media (max-width: 810px) {
     .container-logo {
-        width: 100%;
-        margin: 0 auto;
 
-        .logo {
-            margin-top: -7rem;
-            margin-bottom: -4rem;
-        }
+        margin-top: 3rem;
+        margin-bottom: 3rem;
 
         h2 {
-            color: white;
-            text-align: center;
-            font-size: 3rem;
+            font-size: 2rem;
+            margin-bottom: 3rem;
         }
-        .search-bar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 2rem;
+    }
+}
 
-            input {
-                margin-right: 1rem;
-                padding: 0.5rem 1rem;
-            }
+// Responsive mobile
+@media (max-width: 480px) {
+    .container-logo {
+
+        h2 {
+            font-size: 2rem;
         }
     }
 }

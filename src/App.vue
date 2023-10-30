@@ -58,6 +58,8 @@ export default {
           store.dataSeries = response.data.results;
           store.dataSeries.forEach(serie => {
 
+            console.log(store.dataSeries);
+
             // clean vote and put in store.js
             serie.voteSerie = Math.ceil(((serie.vote_average) / 2));
 

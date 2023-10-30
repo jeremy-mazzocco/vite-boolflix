@@ -1,7 +1,7 @@
 .flip-card {
     background-color: transparent;
     width: calc((100% / 4) - 1rem);
-    height: 513px;
+    height: 413px;
     perspective: 1000px;
 
 }
@@ -29,6 +29,7 @@
     -webkit-backface-visibility: hidden;
     /* Safari */
     backface-visibility: hidden;
+
 }
 
 
@@ -37,4 +38,29 @@
     color: white;
     transform: rotateY(180deg);
     padding: 15px;
+    overflow-y: scroll;
+
+    h3,
+    .title,
+    .flag-container {
+        margin-bottom: 12px;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    h3 {
+        color: rgb(217, 179, 28);
+    }
+
+    .description {
+        font-size: 0.8rem;
+        width: 70%;
+        margin: 2rem auto;
+        padding-bottom: 1rem;
+        
+
+    }
 }

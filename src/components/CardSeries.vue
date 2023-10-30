@@ -42,9 +42,9 @@ export default {
             <div class="flip-card-back">
                 <!-- titles -->
                 <div>
-                    <div>
+                    <h3>
                         {{ detailsseries.original_name }}
-                    </div>
+                    </h3>
                     <div v-if="detailsseries.original_title !== detailsseries.title">
                         {{ detailsseries.name }}
                     </div>
@@ -56,6 +56,9 @@ export default {
                 <div class="stars">
                     {{ detailsseries.stars }}
                 </div>
+                <div class="description">
+                    {{ detailsseries.overview }}
+                </div>
             </div>
         </div>
     </div>
@@ -64,15 +67,5 @@ export default {
 <style lang="scss" scoped>
 @use './styles/flip-card.scss' as*;
 
-h2,
-.title,
-.flag-container {
-    margin-bottom: 12px;
-    margin-top: 12px;
 
-    img {
-        width: 20px;
-        height: 20px;
-    }
-}
 </style>

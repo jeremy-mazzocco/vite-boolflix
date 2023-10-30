@@ -66,7 +66,7 @@ export default {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        gap: 10px 10px;
+        gap: 1rem 1rem;
         margin-bottom: 6rem;
     }
 }

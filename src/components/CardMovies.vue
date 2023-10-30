@@ -24,16 +24,16 @@ export default {
             <div class="flip-card-back">
                 <!-- titles -->
                 <div>
-                    <h2>
+                    <h3>
                         {{ detailsmovies.original_title }}
-                    </h2>
+                    </h3>
                     <div class="title" v-if="detailsmovies.original_title !== detailsmovies.title">
                         {{ detailsmovies.title }}
                     </div>
                 </div>
                 <!-- flags -->
                 <div class="flag-container">
-                    <img :src="detailsmovies.flag" alt="none">
+                    <img :src="detailsmovies.flag">
                 </div>
                 <!-- stars -->
                 <div class="star">
@@ -50,19 +50,6 @@ export default {
 <style lang="scss" scoped>
 @use './styles/flip-card.scss' as*;
 
-h2,
-.title,
-.flag-container {
-    margin-bottom: 12px;
 
-    img {
-        width: 20px;
-        height: 20px;
-    }
-}
 
-.description {
-    width: 70%;
-    margin: 50px auto;
-}
 </style>

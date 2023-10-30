@@ -1,8 +1,9 @@
 .flip-card {
     background-color: transparent;
-    width: calc(100% / 4);
+    width: calc((100% / 4) - 1rem);
     height: 513px;
     perspective: 1000px;
+
 }
 
 .flip-card-inner {
@@ -12,6 +13,8 @@
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
+    border-radius: 2px;
+    border: gray 1px solid;
 }
 
 .flip-card:hover .flip-card-inner {

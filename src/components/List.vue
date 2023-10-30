@@ -66,14 +66,14 @@ export default {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        gap: 10px 0px;
+        gap: 10px 10px;
         margin-bottom: 6rem;
     }
 }
 
 .container-logo {
     width: 50%;
-    margin: 50% auto;
+    margin: 5% auto;
 
     .logo {
         margin-top: -7rem;

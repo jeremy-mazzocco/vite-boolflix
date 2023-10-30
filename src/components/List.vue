@@ -103,7 +103,7 @@ export default {
 @media (max-width: 810px) {
     .container-logo {
 
-        margin-top: 3rem;
+        margin-top: 18rem;
         margin-bottom: 3rem;
 
         h2 {
@@ -116,6 +116,8 @@ export default {
 // Responsive mobile
 @media (max-width: 480px) {
     .container-logo {
+
+        width: 90%;
 
         h2 {
             font-size: 2rem;

@@ -3,7 +3,6 @@
     width: calc((100% / 4) - 1rem);
     height: 413px;
     perspective: 1000px;
-
 }
 
 .flip-card-inner {
@@ -13,8 +12,8 @@
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-    border-radius: 2px;
-    border: gray 1px solid;
+    border-radius: 5px;
+    border: gray 2px solid;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -31,7 +30,6 @@
     backface-visibility: hidden;
 
 }
-
 
 .flip-card-back {
     background-color: rgb(14, 14, 15);
@@ -60,7 +58,86 @@
         width: 70%;
         margin: 2rem auto;
         padding-bottom: 1rem;
-        
+    }
+}
 
+
+// Responsive tablet
+@media (max-width: 810px) {
+
+    .flip-card {
+        background-color: transparent;
+        width: calc((100% / 3) - 1rem);
+        height: 213px;
+        perspective: 1000px;
+    }
+
+    .flip-card-back {
+
+        h3,
+        .title,
+        .flag-container {
+            margin-bottom: 2px;
+
+            img {
+                width: 12px;
+                height: 12px;
+            }
+        }
+
+        h3 {
+            font-size: 1rem;
+        }
+
+        .title {
+            font-size: 0.6rem;
+        }
+
+        .description {
+            font-size: 0.5rem;
+            width: 80%;
+            margin: 0.2rem auto;
+            padding-bottom: 0.2rem;
+        }
+    }
+}
+
+// Responsive mobile
+@media (max-width: 480px) {
+
+    .flip-card {
+        background-color: transparent;
+        width: calc((100% / 2) - 0.5rem);
+        height: 213px;
+        perspective: 1000px;
+    }
+
+    .flip-card-back {
+
+        h3,
+        .title,
+        .flag-container {
+            margin-bottom: 2px;
+
+            img {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        h3 {
+            font-size: 0.7rem;
+        }
+
+        .title {
+            font-size: 0.4rem;
+        }
+
+        .description {
+            font-size: 0.5rem;
+            width: 95%;
+            margin: 0.2rem auto;
+            padding-bottom: 0.2rem;
+        }
     }
 }

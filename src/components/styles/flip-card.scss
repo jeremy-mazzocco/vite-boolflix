@@ -13,7 +13,7 @@
     transition: transform 0.8s;
     transform-style: preserve-3d;
     border-radius: 5px;
-    border: gray 2px solid;
+    // border: gray 2p  x solid;
 }
 
 .flip-card:hover .flip-card-inner {
@@ -63,7 +63,7 @@
 
 
 // Responsive tablet
-@media (max-width: 810px) {
+@media (max-width: 820px) {
 
     .flip-card {
         background-color: transparent;

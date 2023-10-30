@@ -100,15 +100,17 @@ export default {
 }
 
 // Responsive tablet
-@media (max-width: 810px) {
+@media (max-width: 820px) {
     .container-logo {
 
+        width: 90%;
+
         margin-top: 18rem;
-        margin-bottom: 3rem;
+        margin-bottom: 4rem;
 
         h2 {
-            font-size: 2rem;
-            margin-bottom: 3rem;
+            font-size: 3rem;
+            margin-bottom: 6rem;
         }
     }
 }

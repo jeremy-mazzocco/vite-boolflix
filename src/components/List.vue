@@ -22,7 +22,7 @@ export default {
     <div class="container">
 
         <h2 v-if="store.dataMovies.length !== 0">
-            Movies
+            Movdddddddddies
         </h2>
 
         <!-- Jumbotron -->

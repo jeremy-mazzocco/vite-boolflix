@@ -31,3 +31,6 @@ jobs:
         echo 'Done'
       env:
         github-token: ${{ secrets.GH_TOKEN }}
+
+# npm run build
+# git subtree push --prefix dist origin gh-pages

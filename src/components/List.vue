@@ -105,7 +105,7 @@ export default {
 
         width: 90%;
 
-        margin-top: 18rem;
+        margin-top: 11rem;
         margin-bottom: 4rem;
 
         h2 {
@@ -120,7 +120,7 @@ export default {
     .container-logo {
 
         width: 90%;
-
+n
         h2 {
             font-size: 2rem;
         }

@@ -50,6 +50,7 @@ export default {
           console.log(err);
         });
 
+        
       // TV Series
       axios.get(mySeriesURL)
         .then(response => {

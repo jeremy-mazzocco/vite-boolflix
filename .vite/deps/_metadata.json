@@ -1,0 +1,38 @@
+{
+  "hash": "80d2d762",
+  "browserHash": "db201f70",
+  "optimized": {
+    "vue": {
+      "src": "../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "acb0c12f",
+      "needsInterop": false
+    },
+    "@fortawesome/fontawesome-svg-core": {
+      "src": "../../node_modules/@fortawesome/fontawesome-svg-core/index.mjs",
+      "file": "@fortawesome_fontawesome-svg-core.js",
+      "fileHash": "c4a45a9d",
+      "needsInterop": false
+    },
+    "@fortawesome/vue-fontawesome": {
+      "src": "../../node_modules/@fortawesome/vue-fontawesome/index.es.js",
+      "file": "@fortawesome_vue-fontawesome.js",
+      "fileHash": "336c25ab",
+      "needsInterop": false
+    },
+    "@fortawesome/free-solid-svg-icons": {
+      "src": "../../node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
+      "file": "@fortawesome_free-solid-svg-icons.js",
+      "fileHash": "c994cae7",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-L4JPHKU3": {
+      "file": "chunk-L4JPHKU3.js"
+    },
+    "chunk-RZIAPKJ3": {
+      "file": "chunk-RZIAPKJ3.js"
+    }
+  }
+}

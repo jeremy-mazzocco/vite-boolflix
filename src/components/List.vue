@@ -20,8 +20,9 @@ export default {
 
 <template>
     <div class="container">
+
         <h2 v-if="store.dataMovies.length !== 0">
-            Movies
+            Mooovies
         </h2>
 
         <!-- Jumbotron -->
@@ -42,9 +43,11 @@ export default {
         </div>
     </div>
     <div class="container">
+
         <h2 v-if="store.dataSeries.length !== 0">
             TV Series
         </h2>
+
         <div class="row">
             <CardSeries v-for=" (serie, idx) in store.dataSeries" :detailsseries="serie" :key="idx" />
         </div>

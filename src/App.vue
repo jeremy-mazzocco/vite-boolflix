@@ -54,7 +54,6 @@ export default {
       axios.get(mySeriesURL)
         .then(response => {
 
-          // put API in store.js
           store.dataSeries = response.data.results;
           store.dataSeries.forEach(serie => {
 

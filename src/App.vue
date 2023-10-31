@@ -20,6 +20,7 @@ export default {
       let myMovieURL = `${store.movieURL}${store.contentInput}`;
       let mySeriesURL = `${store.seriesURL}${store.contentInput}`;
 
+      
       // Movies
       axios.get(myMovieURL)
         .then(responseMovie => {
@@ -50,7 +51,7 @@ export default {
           console.log(err);
         });
 
-        
+
       // TV Series
       axios.get(mySeriesURL)
         .then(response => {

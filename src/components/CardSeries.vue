@@ -2,6 +2,14 @@
 import { store } from '../store';
 import logo from "../assets/Netflix-logo.png";
 import icon from "../assets/Netflix-icon.png";
+import ch from "../assets/china.png";
+import fr from "../assets/france.png";
+import it from "../assets/italy.png";
+import ja from "../assets/japan.png";
+import pt from "../assets/portugal.png";
+import ru from "../assets/russia.png";
+import sp from "../assets/spain.png";
+import uk from "../assets/united-kingdom.png";
 
 export default {
     name: "CardSeries",
@@ -12,7 +20,15 @@ export default {
         return {
             store,
             logoSrc: logo,
-            iconSrc: icon
+            iconSrc: icon,
+            iconCh: ch,
+            iconFr: fr,
+            iconIt: it,
+            iconJa: ja,
+            iconPt: pt,
+            iconRu: ru,
+            iconSp: sp,
+            iconUk: uk,
         }
     },
     methods: {
@@ -57,7 +73,33 @@ export default {
 
                 <!-- flags -->
                 <div class="flag-container">
-                    <img :src="detailsseries.flag ? `${detailsseries.flag}` : `${iconSrc}`">
+                    <div v-if="detailsseries.original_language === 'ch'">
+                        <img :src="iconCh">
+                    </div>
+                    <div v-else-if="detailsseries.original_language === 'fr'">
+                        <img :src="iconFr">
+                    </div>
+                    <div v-else-if="detailsseries.original_language === 'it'">
+                        <img :src="iconIt">
+                    </div>
+                    <div v-else-if="detailsseries.original_language === 'ja'">
+                        <img :src="iconJa">
+                    </div>
+                    <div v-else-if="detailsseries.original_language === 'pt'">
+                        <img :src="iconPt">
+                    </div>
+                    <div v-else-if="detailsseries.original_language === 'ru'">
+                        <img :src="iconRu">
+                    </div>
+                    <div v-else-if="detailsseries.original_language === 'sp'">
+                        <img :src="iconSp">
+                    </div>
+                    <div v-else-if="detailsseries.original_language === 'uk'">
+                        <img :src="iconUk">
+                    </div>
+                    <div v-else>
+                        <img :src="iconSrc">
+                    </div>
                 </div>
 
                 <!-- stars -->

@@ -59,25 +59,25 @@ export default {
                     <div v-if="detailsmovies.original_language === 'ch'">
                         <img :src="iconCh">
                     </div>
-                    <div v-if="detailsmovies.original_language === 'fr'">
+                    <div v-else-if="detailsmovies.original_language === 'fr'">
                         <img :src="iconFr">
                     </div>
-                    <div v-if="detailsmovies.original_language === 'it'">
+                    <div v-else-if="detailsmovies.original_language === 'it'">
                         <img :src="iconIt">
                     </div>
-                    <div v-if="detailsmovies.original_language === 'ja'">
+                    <div v-else-if="detailsmovies.original_language === 'ja'">
                         <img :src="iconJa">
                     </div>
-                    <div v-if="detailsmovies.original_language === 'pt'">
+                    <div v-else-if="detailsmovies.original_language === 'pt'">
                         <img :src="iconPt">
                     </div>
-                    <div v-if="detailsmovies.original_language === 'ru'">
+                    <div v-else-if="detailsmovies.original_language === 'ru'">
                         <img :src="iconRu">
                     </div>
-                    <div v-if="detailsmovies.original_language === 'sp'">
+                    <div v-else-if="detailsmovies.original_language === 'sp'">
                         <img :src="iconSp">
                     </div>
-                    <div v-if="detailsmovies.original_language === 'uk'">
+                    <div v-else-if="detailsmovies.original_language === 'uk'">
                         <img :src="iconUk">
                     </div>
                     <div v-else>

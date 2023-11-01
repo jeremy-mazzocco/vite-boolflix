@@ -10,35 +10,35 @@ export const store = reactive({
     flags: [
         {
             nation: 'it',
-            img: '../../public/italy.png'
+            img: './src/assets/italy.png'
         },
         {
             nation: 'cn',
-            img: '../../public/china.png'
+            img: './src/assets/china.png'
         },
         {
             nation: 'fr',
-            img: '../../public/france.png'
+            img: './src/assets/france.png'
         },
         {
             nation: 'ja',
-            img: '../../public/japan.png'
+            img: './src/assets/japan.png'
         },
         {
             nation: 'ru',
-            img: '../../public/russia.png'
+            img: './src/assets/russia.png'
         },
         {
             nation: 'es',
-            img: '../../public/spain.png'
+            img: './src/assets/spain.png'
         },
         {
             nation: 'en',
-            img: '../../public/united-kingdom.png'
+            img: './src/assets/united-kingdom.png'
         },
         {
             nation: 'pt',
-            img: '../../public/portugal.png'
+            img: './src/assets/portugal.png'
         }
     ],
     stars: [

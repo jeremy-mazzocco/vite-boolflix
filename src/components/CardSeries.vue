@@ -37,9 +37,11 @@ export default {
     <div class="flip-card">
         <div class="flip-card-inner">
             <div class="flip-card-front">
-                <img :src="`https://image.tmdb.org/t/p/w342${detailsseries.poster_path}`" :alt="store.noPoster">
+                <img
+                :src="detailsseries.poster_path ? `https://image.tmdb.org/t/p/w342${detailsseries.poster_path}` : '../src/assets/Netflix-logo.png'">
             </div>
             <div class="flip-card-back">
+
                 <!-- titles -->
                 <div>
                     <h3>
@@ -49,13 +51,17 @@ export default {
                         {{ detailsseries.name }}
                     </div>
                 </div>
+
                 <!-- flags -->
                 <div class="flag-container">
                     <img :src="detailsseries.flag">
                 </div>
+
+                   <!-- stars -->
                 <div class="stars">
                     {{ detailsseries.stars }}
                 </div>
+
                 <div class="description">
                     {{ detailsseries.overview }}
                 </div>

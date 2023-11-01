@@ -13,11 +13,11 @@
     transition: transform 0.8s;
     transform-style: preserve-3d;
     border-radius: 5px;
-    // border: gray 2p  x solid;
 }
 
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
+    border: 2px solid rgb(244, 6, 18);
 }
 
 .flip-card-front,
@@ -37,6 +37,11 @@
     transform: rotateY(180deg);
     padding: 15px;
     overflow-y: scroll;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     h3,
     .title,
@@ -50,6 +55,7 @@
     }
 
     h3 {
+        margin: 2rem 1rem;
         color: rgb(217, 179, 28);
     }
 

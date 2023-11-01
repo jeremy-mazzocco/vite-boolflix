@@ -38,16 +38,19 @@ export default {
                 </div>
             </div>
         </div>
+
+        <!-- Card Movie -->
         <div class="row">
             <CardMovies v-for=" (movie, idx) in store.dataMovies" :detailsmovies="movie" :key="idx" />
         </div>
     </div>
-    <div class="container">
 
+    <div class="container">
         <h2 v-if="store.dataSeries.length !== 0">
             TV Series
         </h2>
 
+        <!-- card Series -->
         <div class="row">
             <CardSeries v-for=" (serie, idx) in store.dataSeries" :detailsseries="serie" :key="idx" />
         </div>

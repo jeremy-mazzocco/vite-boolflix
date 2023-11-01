@@ -20,12 +20,15 @@ export default {
       let myMovieURL = `${store.movieURL}${store.contentInput}`;
       let mySeriesURL = `${store.seriesURL}${store.contentInput}`;
 
-      
+
       // Movies
       axios.get(myMovieURL)
         .then(responseMovie => {
 
           store.dataMovies = responseMovie.data.results;
+
+          console.log(store.dataMovies);
+
           store.dataMovies.forEach(movie => {
 
             // clean vote and put in store.js
@@ -57,9 +60,10 @@ export default {
         .then(response => {
 
           store.dataSeries = response.data.results;
-          store.dataSeries.forEach(serie => {
 
-            console.log(store.dataSeries);
+          console.log(store.dataSeries);
+
+          store.dataSeries.forEach(serie => {
 
             // clean vote and put in store.js
             serie.voteSerie = Math.ceil(((serie.vote_average) / 2));

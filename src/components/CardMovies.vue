@@ -36,7 +36,7 @@ export default {
 
                 <!-- flags -->
                 <div class="flag-container">
-                    <img :src="detailsmovies.flag">
+                    <img :src="detailsmovies.flag ? `${detailsmovies.flag}` : '../src/assets/Netflix-icon.png'">
                 </div>
 
                 <!-- stars -->

@@ -1,5 +1,7 @@
 <script>
 import { store } from '../store';
+import logo from "../assets/Netflix-logo.png";
+import icon from "../assets/Netflix-icon.png";
 
 export default {
     name: "CardSeries",
@@ -9,6 +11,8 @@ export default {
     data() {
         return {
             store,
+            logoSrc: logo,
+            iconSrc: icon
         }
     },
     methods: {
@@ -37,7 +41,7 @@ export default {
         <div class="flip-card-inner">
             <div class="flip-card-front">
                 <img
-                    :src="detailsseries.poster_path ? `https://image.tmdb.org/t/p/w342${detailsseries.poster_path}` : '../src/assets/Netflix-logo.png'">
+                    :src="detailsseries.poster_path ? `https://image.tmdb.org/t/p/w342${detailsseries.poster_path}` : `${logoSrc}`">
             </div>
             <div class="flip-card-back">
 
@@ -53,7 +57,7 @@ export default {
 
                 <!-- flags -->
                 <div class="flag-container">
-                    <img :src="detailsseries.flag ? `${detailsseries.flag}` : '../src/assets/Netflix-icon.png'">
+                    <img :src="detailsseries.flag ? `${detailsseries.flag}` : `${iconSrc}`">
                 </div>
 
                 <!-- stars -->

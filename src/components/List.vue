@@ -28,7 +28,7 @@ export default {
         <!-- Jumbotron -->
         <div v-else class="container-logo">
             <div class="logo">
-                <img src="../../src/assets/Netflix-logo.png" alt="logo">
+                <img src="../assets/Netflix-logo.png" alt="logo">
             </div>
             <h2>Search your favorite Movie and TV series</h2>
             <div class="search-bar">
@@ -50,7 +50,7 @@ export default {
             TV Series
         </h2>
 
-        <!-- card Series -->
+        <!-- Card Series -->
         <div class="row">
             <CardSeries v-for=" (serie, idx) in store.dataSeries" :detailsseries="serie" :key="idx" />
         </div>
